@@ -15,13 +15,13 @@ server.register(fastifyStatic, {
   })
 
   server.post('/saveInput', async (request, reply) => {
-    const enteredValue = request.body.name.toLowerCase().trim();
-    if (enteredValue === '') {
+    const enteredValue2 = request.body.name.toLowerCase().trim();
+    if (enteredValue2 === '') {
         reply.code(400).send('Введите хотя бы одно слово.');
         return;
     }
 
-    const wordsArray = enteredValue.split(' ').filter(Boolean);
+    const wordsArray = enteredValue2.split(' ').filter(Boolean);
     const res = wordsArray.reduce((prevGroup, el) => {
         if (!prevGroup.has(el)) {
             prevGroup.set(el, []);

@@ -36,10 +36,10 @@ function saveUserInput() {
     .then(data => {
         console.log(data)
         showUniqueWords(data);
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
     });
-    // .catch(error => {
-    //     console.error('Ошибка:', error);
-    // });
 }
 
 function showUniqueWords(data) { 
@@ -48,7 +48,7 @@ function showUniqueWords(data) {
     document.body.classList.remove('modal-open');
     console.log(data)
 
-    data.forEach(({ key, value }) => {
+    data.forEach((value, key) => {
         const createEl = document.createElement('p');
         createEl.innerHTML = `Слово: ${key}, Количество: ${value.length}`;
         modalShowStats.append(createEl);
