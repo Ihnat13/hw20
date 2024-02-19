@@ -46,9 +46,7 @@ function showUniqueWords(data) {
     statsModal.style.display = 'block';
     userInput.style.display = 'none';
     document.body.classList.remove('modal-open');
-    console.log(data)
-
-    data.forEach((value, key) => {
+    data.forEach(([value, key]) => {
         const createEl = document.createElement('p');
         createEl.innerHTML = `Слово: ${key}, Количество: ${value.length}`;
         modalShowStats.append(createEl);
