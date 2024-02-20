@@ -46,9 +46,9 @@ function showUniqueWords(data) {
     statsModal.style.display = 'block';
     userInput.style.display = 'none';
     document.body.classList.remove('modal-open');
-    data.forEach(([value, key]) => {
+    data.forEach(([word, words]) => {
         const createEl = document.createElement('p');
-        createEl.innerHTML = `Слово: ${key}, Количество: ${value.length}`;
+        createEl.innerHTML = `Слово: ${word}, Количество: ${words.length}`;
         modalShowStats.append(createEl);
     });
 }
